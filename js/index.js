@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br> Is<br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,15 +28,69 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br> Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
   "footer": {
     "copyright" : "Copyright Great Idea! 2018"
   },
-};
+}
 
-// Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+// Img src's for the page
+
+const logo = document.getElementById("logo-img")
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+const ctaImg = document.getElementById("cta-img")
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
+const middleImg = document.getElementById("middle-img")
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+// Selectors
+
+const nav = document.querySelectorAll('a')
+const bigHead = document.querySelector('h1')
+const button = document.querySelector('button')
+const littleHead = document.querySelectorAll('h4')
+const pElement = document.querySelectorAll('p')
+
+// Nav Bar and Header
+
+nav[0].innerText = siteContent["nav"]["nav-item-1"]
+nav[2].innerText = siteContent["nav"]["nav-item-3"]
+nav[3].innerText = siteContent["nav"]["nav-item-4"]
+nav[1].innerText = siteContent["nav"]["nav-item-2"]
+nav[4].innerText = siteContent["nav"]["nav-item-5"]
+nav[5].innerText = siteContent["nav"]["nav-item-6"]
+
+bigHead.innerHTML = siteContent["cta"]["h1"]
+
+button.innerText = siteContent["cta"]["button"]
+
+// Main Content
+
+littleHead[0].innerText = siteContent["main-content"]["features-h4"]
+pElement[0].innerText = siteContent["main-content"]["features-content"]
+
+littleHead[1].innerText = siteContent["main-content"]["about-h4"]
+pElement[1].innerText = siteContent["main-content"]["about-content"]
+
+littleHead[2].innerText = siteContent["main-content"]["services-h4"]
+pElement[2].innerText = siteContent["main-content"]["services-content"]
+
+littleHead[3].innerText = siteContent["main-content"]["product-h4"]
+pElement[3].innerText = siteContent["main-content"]["product-content"]
+
+littleHead[4].innerText = siteContent["main-content"]["vision-h4"]
+pElement[4].innerText = siteContent["main-content"]["vision-content"]
+
+// Contact
+
+littleHead[5].innerText = siteContent["contact"]["contact-h4"]
+pElement[5].innerHTML = siteContent["contact"]["address"]
+pElement[6].innerText = siteContent["contact"]["phone"]
+pElement[7].innerText = siteContent["contact"]["email"]
+
+// Footer
+
+pElement[8].innerText = siteContent["footer"]["copyright"]
