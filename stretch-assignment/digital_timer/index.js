@@ -4,14 +4,22 @@ const hundredth = document.getElementById('msHundreds')
 const tenth = document.getElementById('msTens')
 const myButton = document.querySelector('.myButton')
 
-let firstCounter = 0
+let firstCounter = 1
 let secondCounter = 1
 let thirdCounter = 1
 
 let digits = document.querySelector('.digits')
 
 function timer(){
-
+    myButton.addEventListener('click', function(){
+        clearInterval(tenMs)
+        clearInterval(hundMs)
+        clearInterval(oneSec)
+        clearInterval(tenSec)
+        firstCounter = 1
+        secondCounter = 1
+        thirdCounter = 1
+    })
     tenth.innerText = 0
     hundredth.innerText = 0
     ones.innerText = 0
@@ -52,4 +60,3 @@ function timer(){
 }
 
 myButton.addEventListener('click', timer)
-
