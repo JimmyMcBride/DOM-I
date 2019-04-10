@@ -1,16 +1,23 @@
-const tens = document.getElementById("secondTens")
-const ones = document.getElementById("secondOnes")
-const hundredth = document.getElementById("msHundreds")
-const tenth = document.getElementById("msTens")
+const tens = document.getElementById('secondTens')
+const ones = document.getElementById('secondOnes')
+const hundredth = document.getElementById('msHundreds')
+const tenth = document.getElementById('msTens')
+const myButton = document.querySelector('.myButton')
 
 let firstCounter = 0
 let secondCounter = 1
 let thirdCounter = 1
-let forthCounter = 0
 
-let digits = document.querySelector(".digits")
+let digits = document.querySelector('.digits')
 
 function timer(){
+
+    tenth.innerText = 0
+    hundredth.innerText = 0
+    ones.innerText = 0
+    tens.innerText = 0
+    digits.classList.remove('redDigit')
+
     const tenMs = setInterval(() => {
         tenth.innerText = firstCounter++
         if (firstCounter == 10){
@@ -39,9 +46,10 @@ function timer(){
         clearInterval(hundMs)
         clearInterval(oneSec)
         clearInterval(tenSec)
-        digits.classList.add("redDigit")
+        digits.classList.add('redDigit')
     }, 10000)
 
 }
 
-timer()
+myButton.addEventListener('click', timer)
+
