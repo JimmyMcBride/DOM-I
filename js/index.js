@@ -48,24 +48,52 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
 // Selectors
 
-const nav = document.querySelectorAll('a')
+const nav = document.querySelector('nav')
+const navItems = document.querySelectorAll('a')
 const bigHead = document.querySelector('h1')
 const button = document.querySelector('button')
 const littleHead = document.querySelectorAll('h4')
 const pElement = document.querySelectorAll('p')
 
+// Creators
+
+const community = document.createElement('a')
+const education = document.createElement('a')
+
 // Nav Bar and Header
 
-nav[0].innerText = siteContent["nav"]["nav-item-1"]
-nav[2].innerText = siteContent["nav"]["nav-item-3"]
-nav[3].innerText = siteContent["nav"]["nav-item-4"]
-nav[1].innerText = siteContent["nav"]["nav-item-2"]
-nav[4].innerText = siteContent["nav"]["nav-item-5"]
-nav[5].innerText = siteContent["nav"]["nav-item-6"]
+navItems[0].innerText = siteContent["nav"]["nav-item-1"]
+navItems[2].innerText = siteContent["nav"]["nav-item-3"]
+navItems[3].innerText = siteContent["nav"]["nav-item-4"]
+navItems[1].innerText = siteContent["nav"]["nav-item-2"]
+navItems[4].innerText = siteContent["nav"]["nav-item-5"]
+navItems[5].innerText = siteContent["nav"]["nav-item-6"]
 
 bigHead.innerHTML = siteContent["cta"]["h1"]
+bigHead.style.color = 'yellowgreen'
 
 button.innerText = siteContent["cta"]["button"]
+button.style.borderColor = 'orange'
+button.style.color = 'hotpink'
+
+function myFunc(){
+  if (bigHead.style.color == 'yellowgreen'){
+    bigHead.style.color = 'seagreen'
+  } else {
+    bigHead.style.color = 'yellowgreen'
+  }
+}
+button.addEventListener('click', myFunc)
+
+community.textContent = 'Community'
+nav.appendChild(community)
+education.textContent = 'Education'
+nav.prepend(education)
+
+navItems.forEach((value) => {value.style.color = 'seagreen'})
+
+community.style.color = 'seagreen'
+education.style.color = 'seagreen'
 
 // Main Content
 
@@ -83,6 +111,11 @@ pElement[3].innerText = siteContent["main-content"]["product-content"]
 
 littleHead[4].innerText = siteContent["main-content"]["vision-h4"]
 pElement[4].innerText = siteContent["main-content"]["vision-content"]
+
+littleHead.forEach((value) => {value.style.fontSize = '30px'})
+littleHead.forEach((value) => {value.style.color = 'crimson'})
+
+pElement.forEach((value) => {value.style.color = 'purple'})
 
 // Contact
 
