@@ -62,12 +62,14 @@ const education = document.createElement('a')
 
 // Nav Bar and Header
 
-navItems[0].innerText = siteContent["nav"]["nav-item-1"]
-navItems[2].innerText = siteContent["nav"]["nav-item-3"]
-navItems[3].innerText = siteContent["nav"]["nav-item-4"]
-navItems[1].innerText = siteContent["nav"]["nav-item-2"]
-navItems[4].innerText = siteContent["nav"]["nav-item-5"]
-navItems[5].innerText = siteContent["nav"]["nav-item-6"]
+navItems.forEach((value, index) => {value.innerText = siteContent["nav"][`nav-item-${index++}`]})
+
+// navItems[0].innerText = siteContent["nav"]["nav-item-1"]
+// navItems[1].innerText = siteContent["nav"]["nav-item-2"]
+// navItems[2].innerText = siteContent["nav"]["nav-item-3"]
+// navItems[3].innerText = siteContent["nav"]["nav-item-4"]
+// navItems[4].innerText = siteContent["nav"]["nav-item-5"]
+// navItems[5].innerText = siteContent["nav"]["nav-item-6"]
 
 bigHead.innerHTML = siteContent["cta"]["h1"]
 bigHead.style.color = 'yellowgreen'

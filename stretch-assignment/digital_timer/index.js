@@ -4,13 +4,14 @@ const hundredth = document.getElementById('msHundreds')
 const tenth = document.getElementById('msTens')
 const myButton = document.querySelector('.myButton')
 
-let firstCounter = 1
-let secondCounter = 1
-let thirdCounter = 1
+var firstCounter = 1
+var secondCounter = 1
+var thirdCounter = 1
 
-let digits = document.querySelector('.digits')
+const digits = document.querySelector('.digits')
 
 function timer(){
+    // reset
     myButton.addEventListener('click', function(){
         clearInterval(tenMs)
         clearInterval(hundMs)
@@ -26,6 +27,7 @@ function timer(){
     tens.innerText = 0
     digits.classList.remove('redDigit')
 
+    // 10 ms
     const tenMs = setInterval(() => {
         tenth.innerText = firstCounter++
         if (firstCounter == 10){
@@ -33,6 +35,7 @@ function timer(){
         }
     }, 10)
 
+    // 100 ms
     const hundMs = setInterval(() => {
         hundredth.innerText = secondCounter++
         if (secondCounter == 10){
@@ -40,6 +43,7 @@ function timer(){
         }
     }, 100)
 
+    // 1 second
     const oneSec = setInterval(() => {
         ones.innerText = thirdCounter++
         if (thirdCounter == 10){
@@ -47,6 +51,7 @@ function timer(){
         }
     }, 1000)
 
+    // 10 seconds
     const tenSec = setInterval(() => {
         tens.innerText = 1
         tenth.innerText = 0
