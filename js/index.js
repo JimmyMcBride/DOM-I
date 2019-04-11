@@ -92,25 +92,10 @@ education.style.color = 'seagreen'
 
 // Main Content
 
-const mainContent = ['features', 'about', 'sevices', 'product', 'vision']
+const mainContent = ['features', 'about', 'services', 'product', 'vision']
 
 littleHead.forEach((value, index) => {value.innerText = siteContent["main-content"][`${mainContent[index++]}-h4`]})
 pElement.forEach((value, index) => {value.innerText = siteContent["main-content"][`${mainContent[index++]}-content`]})
-
-// littleHead[0].innerText = siteContent["main-content"]["features-h4"]
-// pElement[0].innerText = siteContent["main-content"]["features-content"]
-
-// littleHead[1].innerText = siteContent["main-content"]["about-h4"]
-// pElement[1].innerText = siteContent["main-content"]["about-content"]
-
-// littleHead[2].innerText = siteContent["main-content"]["services-h4"]
-// pElement[2].innerText = siteContent["main-content"]["services-content"]
-
-// littleHead[3].innerText = siteContent["main-content"]["product-h4"]
-// pElement[3].innerText = siteContent["main-content"]["product-content"]
-
-// littleHead[4].innerText = siteContent["main-content"]["vision-h4"]
-// pElement[4].innerText = siteContent["main-content"]["vision-content"]
 
 littleHead.forEach((value) => {value.style.fontSize = '30px'})
 littleHead.forEach((value) => {value.style.color = 'crimson'})
