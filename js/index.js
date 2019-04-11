@@ -64,13 +64,6 @@ const education = document.createElement('a')
 
 navItems.forEach((value, index) => {value.innerText = siteContent["nav"][`nav-item-${index++}`]})
 
-// navItems[0].innerText = siteContent["nav"]["nav-item-1"]
-// navItems[1].innerText = siteContent["nav"]["nav-item-2"]
-// navItems[2].innerText = siteContent["nav"]["nav-item-3"]
-// navItems[3].innerText = siteContent["nav"]["nav-item-4"]
-// navItems[4].innerText = siteContent["nav"]["nav-item-5"]
-// navItems[5].innerText = siteContent["nav"]["nav-item-6"]
-
 bigHead.innerHTML = siteContent["cta"]["h1"]
 bigHead.style.color = 'yellowgreen'
 
@@ -99,20 +92,25 @@ education.style.color = 'seagreen'
 
 // Main Content
 
-littleHead[0].innerText = siteContent["main-content"]["features-h4"]
-pElement[0].innerText = siteContent["main-content"]["features-content"]
+const mainContent = ['features', 'about', 'sevices', 'product', 'vision']
 
-littleHead[1].innerText = siteContent["main-content"]["about-h4"]
-pElement[1].innerText = siteContent["main-content"]["about-content"]
+littleHead.forEach((value, index) => {value.innerText = siteContent["main-content"][`${mainContent[index++]}-h4`]})
+pElement.forEach((value, index) => {value.innerText = siteContent["main-content"][`${mainContent[index++]}-content`]})
 
-littleHead[2].innerText = siteContent["main-content"]["services-h4"]
-pElement[2].innerText = siteContent["main-content"]["services-content"]
+// littleHead[0].innerText = siteContent["main-content"]["features-h4"]
+// pElement[0].innerText = siteContent["main-content"]["features-content"]
 
-littleHead[3].innerText = siteContent["main-content"]["product-h4"]
-pElement[3].innerText = siteContent["main-content"]["product-content"]
+// littleHead[1].innerText = siteContent["main-content"]["about-h4"]
+// pElement[1].innerText = siteContent["main-content"]["about-content"]
 
-littleHead[4].innerText = siteContent["main-content"]["vision-h4"]
-pElement[4].innerText = siteContent["main-content"]["vision-content"]
+// littleHead[2].innerText = siteContent["main-content"]["services-h4"]
+// pElement[2].innerText = siteContent["main-content"]["services-content"]
+
+// littleHead[3].innerText = siteContent["main-content"]["product-h4"]
+// pElement[3].innerText = siteContent["main-content"]["product-content"]
+
+// littleHead[4].innerText = siteContent["main-content"]["vision-h4"]
+// pElement[4].innerText = siteContent["main-content"]["vision-content"]
 
 littleHead.forEach((value) => {value.style.fontSize = '30px'})
 littleHead.forEach((value) => {value.style.color = 'crimson'})
