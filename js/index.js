@@ -62,7 +62,7 @@ const education = document.createElement('a')
 
 // Nav Bar and Header
 
-navItems.forEach((value, index) => {value.innerText = siteContent["nav"][`nav-item-${index++}`]})
+navItems.forEach((value, index) => {value.innerText = siteContent["nav"][`nav-item-${index + 1}`]})
 
 bigHead.innerHTML = siteContent["cta"]["h1"]
 bigHead.style.color = 'yellowgreen'
